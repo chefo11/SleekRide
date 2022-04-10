@@ -24,9 +24,9 @@ function FAQ() {
         <h2>Information for Drivers</h2>
       </div>
       <div className="faqs">
-        {faqs.map((faq) => {
+        {faqs.map((faq, index) => {
           return (
-            <div className="faq">
+            <div className="faq" key={index}>
               <div className="info">
                 {faq.icon}
                 <h4>{faq.text}</h4>
@@ -71,6 +71,11 @@ const Section = styled.section`
         border-bottom: 0.01em solid #6c6e6e;
         padding: 0.8em 0;
       }
+    }
+  }
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+    svg {
+      font-size: 2em !important;
     }
   }
 `;
