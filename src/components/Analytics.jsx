@@ -1,21 +1,21 @@
-import React from 'react'
-import styled from "styled-components"
-import {BsFillCalendar2WeekFill} from "react-icons/bs";
-import {IoStatsChart} from "react-icons/io5";
-import {BiGroup} from "react-icons/bi";
-import {FiActivity} from "react-icons/fi";
-import {cardStyle} from "./ReusableStyles";
+import React from "react";
+import styled from "styled-components";
+import { BsFillCalendar2WeekFill } from "react-icons/bs";
+import { IoStatsChart } from "react-icons/io5";
+import { BiGroup } from "react-icons/bi";
+import { FiActivity } from "react-icons/fi";
+import { cardStyle } from "./ReusableStyles";
 
 function Analytics() {
   return (
     <Section>
-      <div className='analytic'>
+      <div className="analytic">
         <div className="content">
           <h5>Spent this month</h5>
           <h2>$7087.5</h2>
         </div>
         <div className="logo">
-          <BsFillCalendar2WeekFill/>
+          <BsFillCalendar2WeekFill />
         </div>
       </div>
       <div className="analytic">
@@ -46,13 +46,13 @@ function Analytics() {
         </div>
       </div>
     </Section>
-  )
+  );
 }
-const Section =styled.section`
+const Section = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1em;
-  .analytic{
+  .analytic {
     ${cardStyle};
     padding: 1em;
     display: flex;
@@ -60,24 +60,33 @@ const Section =styled.section`
     align-items: center;
     gap: 1em;
     transition: 0.5s ease-in-out;
-    &:hover{
+    &:hover {
       background-color: #ffc107;
       color: #000;
-      svg{
+      svg {
         color: #fff;
       }
     }
-    .logo{
+    .logo {
       background-color: #000;
       border-radius: 3em;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 1em;
-      svg{
+      svg {
         font-size: 2em;
       }
     }
   }
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    .analytic {
+      &:nth-of-type(3),
+      &:nth-of-type(4) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
 `;
-export default Analytics
+export default Analytics;
